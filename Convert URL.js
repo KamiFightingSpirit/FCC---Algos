@@ -3,11 +3,10 @@
 // the global variable
 var globalTitle = "Winter Is Coming";
 
-// Add your code below this line
+//trim any excess white space, convert to lowercase, split into an array on anything nonnumerical/alphabetical, join together using "-"
 function urlSlug(title) {
     let array = title.trim().toLowerCase().split(/\W+/).join("-");
     return array;
 }
-// Add your code above this line
 
 var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
