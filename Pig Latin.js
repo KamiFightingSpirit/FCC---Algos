@@ -1,3 +1,4 @@
+//https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/pig-latin
 /*
 1. If a word begins with a vowel you just add "way" to the end.
   //Handle immediately with first if statement - fast kickout
