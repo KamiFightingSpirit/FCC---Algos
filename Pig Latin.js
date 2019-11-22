@@ -12,11 +12,13 @@ function translatePigLatin(str) {
   let counter = 0;
   let indexArr = [];
   if(vowelArr.includes(str[0])) {
-    str = str+"way";
+    return str+"way";
   } 
-  strArr = str.split("");
+  let strArr = str.split("");
   strArr.map(k => {
-      if(vowelArr.includes(k)) {
+      if(vowelArr.indexOf(k) >= 0) {
+        indexArr.push(strArr.indexOf(k));
+
         //change the above to index of, push to an array, if > -1; sort the array, take index[0] and do a splice then reattach.
 
         counter += 1;
@@ -24,13 +26,12 @@ function translatePigLatin(str) {
   });
   if(counter === 0) {
     str = str+"ay";
-  };
-  
+  } else {
+    indexArr.sort();  
+    let stringEnd = str.slice(0,indexArr[0]);
+    let stringStart = str.slice(indexArr[0]);
+    str = stringStart + stringEnd +"ay";
+  }
   return str;
 }
-
-translatePigLatin("cnsnnt");
-
-// test = "test";
-// test2 = "tconst";
-// console.log(test.includes(test2[0]));
+translatePigLatin("algorithm");
